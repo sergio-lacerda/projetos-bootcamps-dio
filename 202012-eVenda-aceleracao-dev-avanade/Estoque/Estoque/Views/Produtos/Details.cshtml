@@ -1,0 +1,42 @@
+﻿@model Estoque.Models.Produto
+
+@{
+    ViewData["Title"] = "Detalhes do Produto";
+}
+
+<h1>Detalhes do Produto</h1>
+
+<div>
+    <h4>Produto</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.codProd)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.codProd)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.nomeProd)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.nomeProd)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.precoProd)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.precoProd)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.qtdEstProd)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.qtdEstProd)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Editar</a> |
+    <a asp-action="Index">Voltar para a lista</a>
+</div>

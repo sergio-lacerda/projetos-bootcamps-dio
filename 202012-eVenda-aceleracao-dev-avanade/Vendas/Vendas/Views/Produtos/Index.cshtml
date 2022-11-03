@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Vendas.Models.Produto>
+
+@{
+    ViewData["Title"] = "Produtos disponíveis";
+}
+
+<h1>Produtos disponíveis</h1>
+
+<p></p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.codProd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomeProd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precoProd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.qtdEstProd)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codProd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomeProd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precoProd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.qtdEstProd)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

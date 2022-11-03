@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Estoque.Models.Produto>
+
+@{
+    ViewData["Title"] = "Lista de Produtos";
+}
+
+<h1>Lista de Produtos</h1>
+
+<p>
+    <a asp-action="Create">Criar novo produto</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.codProd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.nomeProd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.precoProd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.qtdEstProd)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.codProd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomeProd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.precoProd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.qtdEstProd)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Detalhes</a>  <!-- | -->
+                <!--<a asp-action="Delete" asp-route-id="@item.Id">Apagar</a>-->
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
